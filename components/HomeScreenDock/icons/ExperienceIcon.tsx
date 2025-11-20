@@ -1,0 +1,30 @@
+export const ExperienceIcon = () => {
+  return (
+    <svg
+      width="56"
+      height="56"
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="exp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#cfd3dd" />
+          <stop offset="100%" stopColor="#7b808c" />
+        </linearGradient>
+      </defs>
+      <rect x="40" y="40" width="432" height="432" rx="110" fill="url(#exp-bg)" />
+      <rect x="124" y="188" width="264" height="170" rx="28" fill="#ffffff" />
+      <rect x="144" y="208" width="224" height="110" rx="18" fill="#e5e7ec" />
+      <rect x="224" y="170" width="64" height="42" rx="12" fill="#ffffff" />
+      <rect x="244" y="248" width="24" height="40" rx="6" fill="#c4c7d2" />
+      <path
+        d="M210 170c0-18 14-32 32-32h28c18 0 32 14 32 32"
+        fill="none"
+        stroke="#c4c7d2"
+        strokeWidth="12"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+

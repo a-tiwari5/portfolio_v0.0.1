@@ -1,0 +1,25 @@
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="#6C757D" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round" 
+             width="120" 
+             height="120">
+            
+            <!-- Outer Circle -->
+            <circle cx="12" cy="12" r="10" stroke="#6C757D" stroke-width="2"/>
+            
+            <!-- Rocket Ship -->
+            <!-- Body -->
+            <path d="M12 17V17C9.23858 17 7 14.7614 7 12V8C7 5.23858 9.23858 3 12 3V3C14.7614 3 17 5.23858 17 8V12C17 14.7614 14.7614 17 12 17Z" />
+            <!-- Fin Left -->
+            <path d="M7 11L5 17L7 16" />
+            <!-- Fin Right -->
+            <path d="M17 11L19 17L17 16" />
+            <!-- Thruster / Exhaust -->
+            <path d="M12 17V20" />
+            <!-- Window (Dot) - Matches the 'i' dot style -->
+            <circle cx="12" cy="9" r="1.5" fill="#6C757D" stroke="none" />
+        </svg>

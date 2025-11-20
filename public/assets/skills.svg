@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="#6C757D" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round" 
+             width="120" 
+             height="120">
+            
+            <!-- Outer Circle: Matches the .circle container style -->
+            <circle cx="12" cy="12" r="10" stroke="#6C757D" stroke-width="2"/>
+            
+            <!-- Inner Group: Scaled slightly to fit comfortably inside the radius 10 circle -->
+            <g transform="translate(5.5, 5.5) scale(0.55)"> 
+                 <!-- Screwdriver: Bottom-Left to Top-Right -->
+                <path d="M2 22L14 10" />
+                <path d="M14 10L17 7" />
+                <path d="M19 5L21 3" />
+                
+                <!-- Wrench: Bottom-Right to Top-Left -->
+                <path d="M22 22L10 10" />
+                <path d="M10 10C10 10 7 7 5 9C3 11 5 13 5 13" />
+                <path d="M10 10C10 10 13 7 11 5C9 3 7 5 7 5" />
+                
+                <!-- Simple Pivot Dot (Optional, matches the dot in the 'i') -->
+                <circle cx="12" cy="12" r="2" fill="#6C757D" stroke="none"/>
+            </g>
+        </svg>

@@ -1,0 +1,30 @@
+export const AboutIcon = () => {
+  return (
+    <svg
+      width="56"
+      height="56"
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="about-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#4da5ff" />
+          <stop offset="100%" stopColor="#0066ff" />
+        </linearGradient>
+      </defs>
+      <rect
+        x="40"
+        y="40"
+        width="432"
+        height="432"
+        rx="110"
+        fill="url(#about-bg)"
+      />
+      <circle cx="256" cy="195" r="80" fill="#ffffff" />
+      <path
+        d="M144 372c0-56 50-96 112-96s112 40 112 96v20c0 11-9 20-20 20H164c-11 0-20-9-20-20v-20z"
+        fill="#ffffff"
+      />
+    </svg>
+  );
+};

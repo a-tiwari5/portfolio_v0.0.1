@@ -1,0 +1,2 @@
+export { WindowHeader } from "./WindowHeader";
+

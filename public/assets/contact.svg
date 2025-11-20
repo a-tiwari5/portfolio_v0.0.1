@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="#6C757D" 
+      stroke-width="2" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      width="120" 
+      height="120">
+    
+    <!-- Outer Circle -->
+    <circle cx="12" cy="12" r="10" stroke="#6C757D" stroke-width="2"/>
+    
+    <!-- Envelope Body -->
+    <!-- Centered vertically: Top 7, Bottom 17 (Height 10) -->
+    <rect x="5" y="7" width="14" height="10" rx="2" />
+    
+    <!-- Envelope Flap Lines -->
+    <!-- Goes from top corners (5,7 and 19,7) to the center seal (12,12) -->
+    <path d="M5 7L12 12L19 7" />
+    
+    <!-- Seal (Dot style) - Covers the line intersection cleanly -->
+    <circle cx="12" cy="12" r="1.5" fill="#6C757D" stroke="none" />
+</svg>

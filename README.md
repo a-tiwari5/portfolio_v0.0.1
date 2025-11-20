@@ -1,8 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Interactive Terminal
 
-## Getting Started
+A modern portfolio website featuring an interactive terminal interface built with Next.js 15, React, and TypeScript.
 
-First, run the development server:
+## ✨ Features
+
+- 🖥️ **Interactive Terminal UI** - macOS-style terminal with custom caret
+- 🔊 **Keystroke Sound Effects** - Authentic typing experience with audio feedback
+- 📱 **Responsive Design** - Works seamlessly across all devices
+- ⚡ **Modern Tech Stack** - Built with Next.js 15 and TypeScript
+- 🎨 **Tailwind CSS** - Beautiful, utility-first styling
+- 🏗️ **Clean Architecture** - Follows industry best practices
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -14,20 +43,71 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for detailed architecture documentation.
 
-## Learn More
+```
+portfolio/
+├── app/              # Next.js app router
+├── components/       # React components
+├── hooks/           # Custom React hooks
+├── constants/       # Configuration constants
+├── types/           # TypeScript definitions
+└── public/          # Static assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Font**: Roboto Mono (terminal), Inter (general)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧩 Key Components
+
+### Terminal Components
+- **TerminalWindow**: Main container with macOS-style window
+- **TerminalHeader**: Window control buttons (close, minimize, maximize)
+- **TerminalInput**: Custom input with animated caret
+
+### Custom Hooks
+- **useKeyboardSound**: Manages keystroke sound effects
+
+## 🎨 Customization
+
+### Changing Terminal Prompt
+Edit `constants/terminal.ts`:
+
+```typescript
+PROMPT: {
+  USERNAME: "your-username",
+  HOSTNAME: "your-hostname",
+  SYMBOL: "$", // or ">", "#", etc.
+}
+```
+
+### Adjusting Sound Volume
+Modify volume when calling the hook:
+
+```typescript
+const { handleKeyDown } = useKeyboardSound({ volume: 0.5 }); // 50% volume
+```
+
+### Custom Colors
+Update `constants/terminal.ts` or use Tailwind classes.
+
+## 📚 Learn More
+
+### Next.js Resources
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Next.js GitHub](https://github.com/vercel/next.js)
+
+### Project Documentation
+- [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) - Detailed architecture guide
 
 ## Deploy on Vercel
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 24 24" 
+     fill="none" 
+     stroke="#6C757D" 
+     stroke-width="2" 
+     stroke-linecap="round" 
+     stroke-linejoin="round" 
+     width="24" 
+     height="24">
+    <!-- Outer Circle: Represents the .circle container style -->
+    <circle cx="12" cy="12" r="10" fill="none" stroke="#6C757D" stroke-width="2"/>
+    
+    <!-- Information 'i' symbol -->
+    <!-- Line part of 'i' -->
+    <line x1="12" y1="16" x2="12" y2="12" stroke="#6C757D" stroke-width="2.5" />
+    
+    <!-- Dot part of 'i' -->
+    <circle cx="12" cy="8" r="1.5" fill="#6C757D" stroke="none"/>
+</svg>
