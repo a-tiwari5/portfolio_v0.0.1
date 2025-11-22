@@ -28,7 +28,7 @@ export const TabContent = ({ activeTab }: TabContentProps) => {
   };
 
   return (
-    <div className="flex flex-col overflow-auto flex-3 border border-[#E5E5EA]">
+    <div className="flex flex-col overflow-auto flex-[3] border border-[#E5E5EA]">
       <header className="h-12 px-4 py-2 text-black flex items-center border-b border-[#E5E5EA]">
         <h2 className="text-lg font-bold">{activeTab}</h2>
       </header>

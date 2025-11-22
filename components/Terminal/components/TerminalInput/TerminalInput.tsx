@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 import { getTerminalPrompt } from "@/constants/terminal";
 import { useKeyboardSound } from "@/hooks/useKeyboardSound";
 import type { TerminalInputProps } from "@/types/terminal";
-import { TypingEffect } from "./TypingEffect";
+import { TypingEffect } from "../../TypingEffect";
 
 export function TerminalInput({
   value,
@@ -34,6 +34,11 @@ export function TerminalInput({
     },
     { text: "Parsing lineage of data... OK.", className: "mt-1" },
     { text: "Protocol established. Welcome.", className: "mt-2" },
+    { text: "", className: "mt-4" },
+    {
+      text: `I am Byte Knight, an AI built to present the work of Adarsh Tiwari.
+Type 'help' for a list of commands, or ask me a question in plain English.`,
+    },
   ];
 
   const handleWrapperClick = () => {
@@ -55,48 +60,46 @@ export function TerminalInput({
   return (
     <div className="font-roboto-mono text-xs w-full">
       {/* Initialization text with typing effect */}
-      <TypingEffect
+      {/* <TypingEffect
         lines={initLines}
         typingSpeed={30}
         delayBetweenLines={300}
         onComplete={() => setTypingComplete(true)}
-      />
+      /> */}
 
       {/* Show input only after typing is complete */}
-      {typingComplete && (
-        <div className="grid grid-cols-[auto_1fr] gap-2 w-full">
-          {/* Terminal prompt */}
-          <span className="font-bold text-black whitespace-nowrap">
-            {getTerminalPrompt()}
-          </span>
+      <div className="grid grid-cols-[auto_1fr] gap-2 w-full">
+        {/* Terminal prompt */}
+        <span className="font-bold text-black whitespace-nowrap">
+          {getTerminalPrompt()}
+        </span>
 
-          {/* Input area */}
-          <div
-            className="relative cursor-text min-h-[16px] overflow-hidden"
-            onClick={handleWrapperClick}
-          >
-            {/* Visible text content and custom caret */}
-            <div className="text-black leading-[16px] break-all">
-              <span className="select-none pointer-events-none whitespace-pre-wrap">
-                {value}
-              </span>
-              <span className="terminal-caret" />
-            </div>
-
-            {/* Invisible input for keyboard capture */}
-            <input
-              ref={inputRef}
-              type="text"
-              value={value}
-              onChange={handleChange}
-              onKeyDown={handleKeyDownInternal}
-              className="absolute inset-0 opacity-0 cursor-text w-full h-full"
-              autoFocus={autoFocus}
-              aria-label="Terminal input"
-            />
+        {/* Input area */}
+        <div
+          className="relative cursor-text min-h-[16px] overflow-hidden"
+          onClick={handleWrapperClick}
+        >
+          {/* Visible text content and custom caret */}
+          <div className="text-black leading-[16px] break-all">
+            <span className="select-none pointer-events-none whitespace-pre-wrap">
+              {value}
+            </span>
+            <span className="terminal-caret" />
           </div>
+
+          {/* Invisible input for keyboard capture */}
+          <input
+            ref={inputRef}
+            type="text"
+            value={value}
+            onChange={handleChange}
+            onKeyDown={handleKeyDownInternal}
+            className="absolute inset-0 opacity-0 cursor-text w-full h-full"
+            autoFocus={autoFocus}
+            aria-label="Terminal input"
+          />
         </div>
-      )}
+      </div>
     </div>
   );
 }

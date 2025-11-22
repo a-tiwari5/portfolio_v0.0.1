@@ -35,8 +35,8 @@ function WindowContainer({
   onMouseDown,
   children,
   className = "",
-  baseWidth = "w-[600px]",
-  baseHeight = "h-[400px]",
+  baseWidth = "w-[95vw] md:w-[600px]",
+  baseHeight = "h-[60vh] md:h-[400px]",
 }: WindowContainerProps) {
   const { isMaximized, isMinimized, zIndex } = windowState;
 
@@ -55,7 +55,9 @@ function WindowContainer({
   return (
     <div
       ref={dragRef}
-      className={`${baseClasses} ${transitionClasses} ${maximizedClasses} ${visibilityClasses} ${cursorClasses} ${className}`}
+      className={`${baseClasses} ${transitionClasses} ${maximizedClasses} ${visibilityClasses} ${cursorClasses} ${
+        !isMaximized ? "max-md:!transform-[translate(-50%,-50%)]" : ""
+      } ${className}`}
       style={{
         zIndex,
         ...(!isMaximized && {
@@ -116,8 +118,8 @@ export function WindowManager() {
             terminalDrag.handleMouseDown,
             windows.terminal.isMaximized
           )}
-          baseWidth="w-[40vw]"
-          baseHeight="min-h-[80vh]"
+          baseWidth="w-[95vw] md:w-[40vw]"
+          baseHeight="h-[70vh] md:min-h-[80vh]"
         >
           <TerminalWindow>
             <TerminalSession />

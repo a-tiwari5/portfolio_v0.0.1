@@ -4,5 +4,5 @@
  */
 
 export { TerminalWindow } from "./TerminalWindow";
-export { TerminalInput } from "./TerminalInput";
+export { TerminalInput } from "./components/TerminalInput/TerminalInput";
 export { TerminalSession } from "./TerminalSession";

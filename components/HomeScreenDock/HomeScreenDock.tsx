@@ -29,7 +29,7 @@ const HomeScreenDock = () => {
   return (
     <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
       {/* Dock container with glassmorphism */}
-      <div className="relative px-4 py-4 dock-container">
+      <div className="relative px-2 py-2 md:px-4 md:py-4 dock-container">
         <svg style={{ display: "none" }}>
           <filter id="displacementFilter">
             <feTurbulence
@@ -48,11 +48,11 @@ const HomeScreenDock = () => {
           </filter>
         </svg>
 
-        <div className="flex items-center gap-4 relative z-10">
+        <div className="flex items-center gap-2 md:gap-4 relative z-10">
           {/* About Icon */}
           <div
             onClick={() => handleIconClick("about")}
-            className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
           >
             <AboutIcon />
             {windows.about.isOpen && (
@@ -63,7 +63,7 @@ const HomeScreenDock = () => {
           {/* Experience Icon */}
           <div
             onClick={() => handleIconClick("experience")}
-            className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
           >
             <ExperienceIcon />
             {windows.experience.isOpen && (
@@ -74,7 +74,7 @@ const HomeScreenDock = () => {
           {/* Projects Icon */}
           <div
             onClick={() => handleIconClick("projects")}
-            className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
           >
             <ProjectsIcon />
             {windows.projects.isOpen && (
@@ -85,7 +85,7 @@ const HomeScreenDock = () => {
           {/* Contact Icon */}
           <div
             onClick={() => handleIconClick("contact")}
-            className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
           >
             <ContactIcon />
             {windows.contact.isOpen && (
@@ -96,7 +96,7 @@ const HomeScreenDock = () => {
           {/* Terminal Icon */}
           <div
             onClick={() => handleIconClick("terminal")}
-            className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
+            className="w-10 h-10 md:w-14 md:h-14 rounded-xl flex items-center justify-center cursor-pointer transition-transform hover:scale-150 relative"
           >
             <TerminalIcon />
             {windows.terminal.isOpen && (
