@@ -11,20 +11,81 @@ import { TerminalInput } from "./components/TerminalInput/TerminalInput";
 import { TypingEffect } from "./TypingEffect";
 
 // Define built-in commands and their static responses
+import {
+  ABOUT_CONTENT,
+  EXPERIENCE_CONTENT,
+  PROJECTS_CONTENT,
+  SKILLS_CONTENT,
+  CONTACT_CONTENT,
+} from "@/components/AboutMe/constants";
+
+// Helper functions to format data
+const formatExperience = () => {
+  return EXPERIENCE_CONTENT.experiences
+    .map(
+      (exp) =>
+        `Title: ${exp.title}\nCompany: ${exp.company}\nDate: ${exp.dateText}\nDetails:\n${exp.bullets
+          .map((b) => `- ${b}`)
+          .join("\n")}`
+    )
+    .join("\n\n");
+};
+
+const formatProjects = () => {
+  return PROJECTS_CONTENT.projects
+    .map(
+      (proj) =>
+        `Name: ${proj.name}\nDescription: ${proj.description}\nTags: ${proj.tags.join(
+          ", "
+        )}\nLinks: ${proj.links.join(", ")}`
+    )
+    .join("\n\n");
+};
+
+const formatSkills = () => {
+  return SKILLS_CONTENT.categories
+    .map(
+      (cat) =>
+        `${cat.title}:\n${cat.skills.map((s) => `- ${s.name}`).join("\n")}`
+    )
+    .join("\n\n");
+};
+
+const formatLanguages = () => {
+  const languages = SKILLS_CONTENT.categories.find(
+    (cat) => cat.title === "Languages"
+  );
+  return languages
+    ? languages.skills.map((s) => `- ${s.name}`).join("\n")
+    : "No languages found.";
+};
+
+const formatContact = () => {
+  return `Email: ${CONTACT_CONTENT.email}\nLocation: ${
+    CONTACT_CONTENT.location
+  }\nSocials:\n${CONTACT_CONTENT.socials
+    .map((s) => `- ${s.name}: ${s.url}`)
+    .join("\n")}`;
+};
+
+// Define built-in commands and their static responses
 const BUILT_IN_COMMANDS: Record<string, string | (() => string)> = {
   help: `Available commands:\nabout, education, experience, projects, skills, languages, certifications, talks, leadership, resume, contact, creator, all, clear`,
-  about: `Adarsh Tiwari is a Software & AI Engineer, currently at Preplaced, with 2.8 years of experience.`,
+  about: ABOUT_CONTENT.bio,
   education: "Education info not configured.",
-  experience: "Experience info not configured.",
-  projects: "Projects info not configured.",
-  skills: "Skills info not configured.",
-  languages: "Languages info not configured.",
+  experience: formatExperience,
+  projects: formatProjects,
+  skills: formatSkills,
+  languages: formatLanguages,
   certifications: "Certifications info not configured.",
-  talks: "Talks info not configured.",
-  leadership: "Leadership info not configured.",
-  resume: "Resume download not implemented.",
-  contact:
-    "Contact: adarshtiwari0395@gmail.com\nLinkedIn: https://www.linkedin.com/in/tiwariat",
+  resume: () => {
+    window.open(
+      "/assets/documents/Adarsh_Tiwari_-Software_Development_Engineer_-2024.pdf (8) (1).pdf",
+      "_blank"
+    );
+    return "Opening resume...";
+  },
+  contact: formatContact,
   creator: "Creator: Adarsh Tiwari",
   all: "Use each command to get specific info.",
   clear: () => "__CLEAR__", // Special value
@@ -117,7 +178,7 @@ export function TerminalSession() {
         delayBetweenLines={300}
         onComplete={() => setTypingComplete(true)}
       />
-      <div className="flex-1 overflow-y-auto pb-2">
+      <div className="flex-1 pb-2">
         {turns.map((turn, idx) => (
           <div key={idx} className="mb-2">
             <div className="grid grid-cols-[auto_1fr] gap-2 w-full">
