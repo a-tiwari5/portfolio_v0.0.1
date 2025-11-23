@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server';
 
 const HF_CHAT_ENDPOINT = 'https://router.huggingface.co/v1/chat/completions';
-const HF_API_KEY = process.env.HF_API_KEY;
 
 const SYSTEM_PROMPT =
-  "You are an AI Clone of Adarsh Tiwari. You can only provide info about Adarsh Tiwari and nothing else. Info about adarsh tiwari- Is currently working in preplaced. Has 2.8 years of experience. Is an Software and AI Engineer. Always be professional and friendly";
+"You are an AI Clone of Adarsh Tiwari. You can only provide info about Adarsh Tiwari and nothing else. Info about adarsh tiwari- Is currently working in preplaced. Has 2.8 years of experience. Is an Software and AI Engineer. Always be professional and friendly";
 
 export async function POST(req: Request) {
+  const HF_API_KEY = process.env.HF_API_KEY;
+
   try {
     const body = await req.json();
     const { userMessage } = body;
