@@ -70,7 +70,7 @@ const formatContact = () => {
 
 // Define built-in commands and their static responses
 const BUILT_IN_COMMANDS: Record<string, string | (() => string)> = {
-  help: `Available commands:\nabout, education, experience, projects, skills, languages, certifications, talks, leadership, resume, contact, creator, all, clear`,
+  help: `Available commands:\nabout, education, experience, projects, skills, languages, certifications, resume, contact, creator, all, clear`,
   about: ABOUT_CONTENT.bio,
   education: "Education info not configured.",
   experience: formatExperience,
